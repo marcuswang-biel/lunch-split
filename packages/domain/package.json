@@ -6,7 +6,8 @@
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts",
-		"./claims": "./src/claims/index.ts"
+		"./claims": "./src/claims/index.ts",
+		"./orders": "./src/orders/index.ts"
 	},
 	"scripts": {
 		"check": "run-s -c check:*",
@@ -22,8 +23,8 @@
 		"effect": "catalog:"
 	},
 	"devDependencies": {
-		"@lunch-split/config": "workspace:*",
 		"@effect/vitest": "catalog:",
+		"@lunch-split/config": "workspace:*",
 		"npm-run-all2": "catalog:",
 		"typescript": "catalog:",
 		"vitest": "catalog:"
