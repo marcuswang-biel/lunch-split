@@ -1,6 +1,6 @@
 # 午飯拼單
 
-Monorepo starter for BIEL projects: a Convex backend, a Vite + React web app and an Expo app sharing one auth provider, with business rules in Effect.
+辦公室同事一起點外賣。誰想叫外賣就開一張拼單，寫上店名和截單時間；其他人加入自己的菜和價錢。到了截單時間，這張單自動關閉。只能改自己點的菜，截單後誰都不能改。
 
 ## Stack
 
@@ -57,7 +57,7 @@ Native: `pnpm dev:native`, then open the app in a simulator or development build
 
    This rewrites the npm scope (`@lunch-split/*` → `@billing/*`), the Expo slug, scheme and bundle id (`com.lunchsplit.app` → `com.billing.app`), storage keys and display names. Review `git diff` before committing.
 
-3. Replace the example domain: `packages/domain/src/claims`, `packages/backend/convex/claims.ts`, the `claims` table in `convex/schema.ts`, and the claims pages. Keep the pattern (ADR 0001).
+3. Replace the example domain: `packages/domain/src/orders`, `packages/backend/convex/orders.ts`, the `orders` and `dishes` tables in `convex/schema.ts`, and the order pages. Keep the pattern (ADR 0001).
 4. Fill in `CONTEXT.md`.
 5. Production setup (not done by the template): a Convex project and `CONVEX_DEPLOY_KEY`, Vercel project secrets (`VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`), `EXPO_TOKEN` and an EAS project for native, and the auth provider config in `docs/auth.md`.
 

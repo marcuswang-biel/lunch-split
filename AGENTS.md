@@ -55,7 +55,7 @@ pnpm workspaces with Turborepo.
 ## Code conventions
 
 - TypeScript, tabs, single quotes, oxfmt. Keep tests next to the code they cover.
-- Business rules live in `packages/domain` as Effect programs with tagged errors. A Convex handler authorizes, reads, runs the program, maps tagged errors to `ConvexError({ code, message })` with a code from `packages/shared/src/error-codes.ts`, then writes. See ADR 0001 and `convex/claims.ts`.
+- Business rules live in `packages/domain` as Effect programs with tagged errors. A Convex handler authorizes, reads, runs the program, maps tagged errors to `ConvexError({ code, message })` with a code from `packages/shared/src/error-codes.ts`, then writes. See ADR 0001 and `convex/orders.ts`.
 - Every Convex function declares `args` and `returns` validators.
 - Owner-scoped data stores `ownerId` = `requireUserId(ctx)` (the token subject) and checks it on every read and write.
 - Import mutation builders from `convex/functions.ts`, never `_generated/server`. The wrapper runs database triggers.

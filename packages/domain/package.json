@@ -6,7 +6,6 @@
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts",
-		"./claims": "./src/claims/index.ts",
 		"./orders": "./src/orders/index.ts"
 	},
 	"scripts": {

@@ -18,7 +18,7 @@ Convex handlers mix four jobs: authorization, reads, the business decision and w
    5. writes the result.
 4. Rules are tested with `@effect/vitest` against a test `Layer`. The handler is tested with convex-test for authorization, reads, writes and the error-code mapping.
 
-The reference implementation is `packages/domain/src/claims/` (rule) and `packages/backend/convex/claims.ts` (`submit`).
+The reference implementation is `packages/domain/src/orders/` (rule) and `packages/backend/convex/orders.ts` (`open`, `addDish`, `reviseDish`, `removeDish`, `close`).
 
 ## Consequences
 

@@ -7,8 +7,6 @@
 export const APP_ERROR_CODES = {
 	unauthenticated: 'UNAUTHENTICATED',
 	notFound: 'NOT_FOUND',
-	claimInvalid: 'CLAIM_INVALID',
-	claimMonthlyQuotaExceeded: 'CLAIM_MONTHLY_QUOTA_EXCEEDED',
 	orderInvalid: 'ORDER_INVALID',
 	dishInvalid: 'DISH_INVALID',
 	orderClosed: 'ORDER_CLOSED',

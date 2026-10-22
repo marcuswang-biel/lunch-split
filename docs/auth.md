@@ -1,6 +1,6 @@
 # Auth: Better Auth on Convex
 
-Better Auth runs inside the Convex deployment through the `@convex-dev/better-auth` component. Both clients end up with a Convex JWT whose `sub` is the Better Auth user id. Domain code reads only that subject (`packages/backend/convex/lib/identity.ts`), so tables like `claims` do not depend on the auth library.
+Better Auth runs inside the Convex deployment through the `@convex-dev/better-auth` component. Both clients end up with a Convex JWT whose `sub` is the Better Auth user id. Domain code reads only that subject (`packages/backend/convex/lib/identity.ts`), so tables like `orders` and `dishes` do not depend on the auth library.
 
 ## How it is wired
 

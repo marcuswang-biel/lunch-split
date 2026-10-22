@@ -15,7 +15,7 @@ import { v } from 'convex/values';
 
 import type { DataModel } from './_generated/dataModel';
 
-import { components, internal } from './_generated/api';
+import { components } from './_generated/api';
 import { internalAction } from './_generated/server';
 import authConfig from './auth.config';
 
@@ -73,13 +73,11 @@ export const ensureDevUserInternal = internalAction({
 		if (existing) {
 			// SAFETY: the Better Auth component's `findOne` returns the stored user document.
 			const userId = (existing as { _id: string })._id;
-			await ctx.runMutation(internal.claims.seedForOwner, { ownerId: userId });
 			return { email: DEV_USER.email, userId, created: false };
 		}
 
 		const { auth, headers } = await authComponent.getAuth(createAuth, ctx);
 		const result = await auth.api.signUpEmail({ headers, body: DEV_USER });
-		await ctx.runMutation(internal.claims.seedForOwner, { ownerId: result.user.id });
 		return { email: DEV_USER.email, userId: result.user.id, created: true };
 	},
 });

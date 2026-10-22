@@ -9,7 +9,7 @@
  *
  * The template registers no triggers yet. Add them in `createTriggers()`:
  *
- *   triggers.register('claims', async (ctx, change) => { ... });
+ *   triggers.register('orders', async (ctx, change) => { ... });
  */
 
 import type { GenericMutationCtx } from 'convex/server';

@@ -11,12 +11,12 @@
  *
  * Add a migration:
  *
- *   export const backfillClaimCurrency_20270101 = migrations.define({
- *     table: 'claims',
- *     migrateOne: async (_ctx, claim) => (claim.currency ? undefined : { currency: 'HKD' }),
+ *   export const backfillOrderNote_20270101 = migrations.define({
+ *     table: 'orders',
+ *     migrateOne: async (_ctx, order) => (order.note ? undefined : { note: '' }),
  *   });
  *
- * then append `internal.migrations.backfillClaimCurrency_20270101` to `releaseQueue`.
+ * then append `internal.migrations.backfillOrderNote_20270101` to `releaseQueue`.
  * Migrations must be idempotent: `runAll` re-runs on every release, and the
  * component skips a migration that already completed.
  */

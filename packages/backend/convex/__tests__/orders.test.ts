@@ -178,3 +178,15 @@ describe('orders', () => {
 		}
 	});
 });
+
+describe('viewer', () => {
+	it('returns null when signed out and the signed-in identity otherwise', async () => {
+		const t = convexTest(schema, modules);
+		expect(await t.query(api.viewer.get, {})).toBeNull();
+		const alice = await signIn(t, 'alice@example.com');
+		expect(await alice.as.query(api.viewer.get, {})).toMatchObject({
+			subject: alice.userId,
+			email: 'alice@example.com',
+		});
+	});
+});

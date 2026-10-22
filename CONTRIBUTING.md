@@ -12,7 +12,7 @@ Commits and PR titles use `<type>(<scope>): <subject>`. Start the subject with a
 
 Scopes are `web`, `native`, `backend`, `domain`, `shared` and `deps`. Mark breaking changes with `!` or a `BREAKING CHANGE:` footer.
 
-Example: `fix(web): keep the claim form filled after a quota error`.
+Example: `fix(web): keep the dish form filled after a closed-order error`.
 
 Run `pnpm check` and the relevant tests. Open a PR, pass CI, resolve review threads, then squash-merge.
 

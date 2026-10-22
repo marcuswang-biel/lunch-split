@@ -10,7 +10,7 @@ import { convexErrorCode, convexErrorMessage } from './convex-error';
  */
 function redacted(data: Value): Error {
 	const error = new Error(
-		'[CONVEX M(claims:submit)] [Request ID: 4a2360b4a67b0354] Server Error\n  Called by client',
+		'[CONVEX M(orders:open)] [Request ID: 4a2360b4a67b0354] Server Error\n  Called by client',
 	);
 	return Object.assign(error, { data });
 }
@@ -35,9 +35,7 @@ describe('convexErrorMessage', () => {
 
 describe('convexErrorCode', () => {
 	it('reads the code from application data', () => {
-		expect(convexErrorCode(redacted({ code: 'CLAIM_INVALID', message: 'x' }))).toBe(
-			'CLAIM_INVALID',
-		);
+		expect(convexErrorCode(redacted({ code: 'ORDER_CLOSED', message: 'x' }))).toBe('ORDER_CLOSED');
 	});
 
 	it('returns null for an error without a code', () => {

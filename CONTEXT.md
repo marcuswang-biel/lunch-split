@@ -1,24 +1,33 @@
 # 午飯拼單
 
-One paragraph: what this system does and for whom. Replace this file's content as the domain takes shape; keep one term per concept.
+辦公室同事一起點外賣。誰想叫外賣就開一張拼單，寫上店名和截單時間；其他人加入自己的菜和價錢。到了截單時間，這張單自動關閉。
 
 ## Language
 
-**Claim (報銷)**:
-An expense a user submits for reimbursement. Belongs to exactly one owner. Template example; replace it.
-_Avoid_: expense, request
+**Order (拼單)**:
+A lunch order someone opens for the office. It has a restaurant name, a cutoff time, and a status of open or closed.
+_Avoid_: claim, group, cart
+
+**Dish (菜)**:
+One item a person adds to an order, with a name and a price. Belongs to exactly one owner.
+_Avoid_: line item, entry
 
 **Owner**:
-The signed-in user a row belongs to, stored as the auth token subject (`ownerId`).
-_Avoid_: user id (ambiguous across auth providers), creator
+The signed-in user a dish belongs to, stored as the auth token subject (`ownerId`). Only that owner may change the dish, and only while the order is open.
+_Avoid_: user id, creator
 
-**Monthly quota (每月額度)**:
-The most one owner may claim in a UTC calendar month. A claim that would exceed it is rejected.
+**Opener (開單的人)**:
+The signed-in user who opened the order, stored as `openerId`.
+_Avoid_: owner (that word is for a dish)
 
-**Auto-approve limit**:
-Claims at or below this amount are approved on submit; larger ones stay pending.
+**Cutoff (截單時間)**:
+The instant the order stops accepting changes. A scheduled job marks the order closed at that time. After the cutoff, nobody can add, edit, or remove a dish.
+_Avoid_: deadline, expiry
 
 ## Relationships
 
-- An owner has many claims.
-- The claim rule (`packages/domain/src/claims`) decides a claim's status from the claim and the owner's month-to-date total.
+- An opener opens many orders.
+- An order has many dishes.
+- A dish belongs to one order and one owner.
+- The dish rule (`packages/domain/src/orders`) rejects a change when the actor is not the dish owner, or when the order is closed or the cutoff has passed.
+- The cutoff job (`orders.close`) marks the order closed once the cutoff time is reached.
