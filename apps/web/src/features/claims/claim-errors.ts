@@ -1,6 +1,6 @@
 import type { MessageDescriptor } from '@lingui/core';
 
-import { APP_ERROR_CODES, type AppErrorCode } from '@acme/shared/error-codes';
+import { APP_ERROR_CODES, type AppErrorCode } from '@lunch-split/shared/error-codes';
 import { msg } from '@lingui/core/macro';
 
 /** Translated text per backend error code. Resolve with `t(descriptor)` at the call site. */

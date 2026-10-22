@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@acme/web-ui';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@lunch-split/web-ui';
 import { Trans } from '@lingui/react/macro';
 import { createFileRoute, Navigate } from '@tanstack/react-router';
 import { useConvexAuth } from 'convex/react';

@@ -1,17 +1,17 @@
 {
 	"expo": {
-		"name": "Acme",
-		"slug": "acme",
+		"name": "午飯拼單",
+		"slug": "lunch-split",
 		"version": "0.1.0",
-		"scheme": "acme",
+		"scheme": "lunch-split",
 		"orientation": "portrait",
 		"userInterfaceStyle": "automatic",
 		"ios": {
 			"supportsTablet": true,
-			"bundleIdentifier": "com.acme.app"
+			"bundleIdentifier": "com.lunchsplit.app"
 		},
 		"android": {
-			"package": "com.acme.app"
+			"package": "com.lunchsplit.app"
 		},
 		"plugins": ["expo-router", "expo-secure-store", "expo-web-browser"],
 		"experiments": {

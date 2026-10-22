@@ -1,5 +1,5 @@
 {
-	"name": "@acme/config",
+	"name": "@lunch-split/config",
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {

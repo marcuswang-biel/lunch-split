@@ -1,5 +1,5 @@
 {
-	"name": "@acme/native",
+	"name": "@lunch-split/native",
 	"version": "0.1.0",
 	"private": true,
 	"main": "expo-router/entry",
@@ -17,8 +17,8 @@
 		"lint": "pnpm --dir ../.. exec oxlint apps/native"
 	},
 	"dependencies": {
-		"@acme/backend": "workspace:*",
-		"@acme/shared": "workspace:*",
+		"@lunch-split/backend": "workspace:*",
+		"@lunch-split/shared": "workspace:*",
 		"@better-auth/core": "catalog:",
 		"@better-auth/expo": "catalog:",
 		"@convex-dev/better-auth": "catalog:",

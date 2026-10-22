@@ -1,5 +1,5 @@
 {
-	"name": "@acme/backend",
+	"name": "@lunch-split/backend",
 	"version": "0.1.0",
 	"private": true,
 	"description": "Convex backend",
@@ -22,8 +22,8 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
-		"@acme/domain": "workspace:*",
-		"@acme/shared": "workspace:*",
+		"@lunch-split/domain": "workspace:*",
+		"@lunch-split/shared": "workspace:*",
 		"@better-auth/core": "catalog:",
 		"@better-auth/expo": "catalog:",
 		"@convex-dev/better-auth": "catalog:",
@@ -34,7 +34,7 @@
 		"effect": "catalog:"
 	},
 	"devDependencies": {
-		"@acme/config": "workspace:*",
+		"@lunch-split/config": "workspace:*",
 		"@convex-dev/eslint-plugin": "^3.0.0",
 		"@edge-runtime/vm": "catalog:",
 		"@types/node": "catalog:",

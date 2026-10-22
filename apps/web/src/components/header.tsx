@@ -1,5 +1,5 @@
-import { api } from '@acme/backend/convex/_generated/api';
-import { Button } from '@acme/web-ui';
+import { api } from '@lunch-split/backend/convex/_generated/api';
+import { Button } from '@lunch-split/web-ui';
 import { convexQuery } from '@convex-dev/react-query';
 import { Trans } from '@lingui/react/macro';
 import { useQuery } from '@tanstack/react-query';
@@ -19,7 +19,7 @@ export default function Header() {
 		<header className="flex h-14 items-center justify-between border-b px-4">
 			<nav className="flex items-center gap-4 text-sm font-medium">
 				<Link to="/" className="font-semibold">
-					Acme
+					午飯拼單
 				</Link>
 				{isAuthenticated && (
 					<Link to="/claims" className="[&.active]:text-foreground text-muted-foreground">

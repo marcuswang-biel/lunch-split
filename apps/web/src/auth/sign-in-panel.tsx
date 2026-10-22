@@ -1,4 +1,4 @@
-import { Button, Input, Label } from '@acme/web-ui';
+import { Button, Input, Label } from '@lunch-split/web-ui';
 import { Trans, useLingui } from '@lingui/react/macro';
 import { useState, type FormEvent } from 'react';
 
