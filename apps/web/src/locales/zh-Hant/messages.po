@@ -13,41 +13,45 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/routes/orders/$orderId.tsx:168
-#: src/routes/orders/$orderId.tsx:286
+#: src/routes/orders/$orderId.tsx:175
+#: src/routes/orders/$orderId.tsx:359
 msgid "價錢 (HKD)"
 msgstr "價錢 (HKD)"
 
-#: src/routes/orders/$orderId.tsx:71
-#: src/routes/orders/$orderId.tsx:87
+#: src/routes/orders/$orderId.tsx:72
+#: src/routes/orders/$orderId.tsx:92
 msgid "價錢格式不正確。"
 msgstr "價錢格式不正確。"
 
-#: src/routes/orders/$orderId.tsx:296
+#: src/routes/orders/$orderId.tsx:369
 msgid "儲存"
 msgstr "儲存"
 
-#: src/routes/orders/$orderId.tsx:302
+#: src/routes/orders/$orderId.tsx:287
 msgid "刪除"
 msgstr "刪除"
 
-#: src/routes/orders/$orderId.tsx:179
+#: src/routes/orders/$orderId.tsx:186
 msgid "加入"
 msgstr "加入"
 
-#: src/routes/orders/$orderId.tsx:147
+#: src/routes/orders/$orderId.tsx:154
 msgid "加菜"
 msgstr "加菜"
+
+#: src/routes/orders/$orderId.tsx:372
+msgid "取消"
+msgstr "取消"
 
 #: src/features/orders/order-errors.ts:13
 msgid "只能改自己點的菜。"
 msgstr "只能改自己點的菜。"
 
-#: src/routes/orders/$orderId.tsx:183
+#: src/routes/orders/$orderId.tsx:190
 msgid "只能改自己點的菜。截單後誰都不能改。"
 msgstr "只能改自己點的菜。截單後誰都不能改。"
 
-#: src/routes/orders/$orderId.tsx:221
+#: src/routes/orders/$orderId.tsx:228
 msgid "合計"
 msgstr "合計"
 
@@ -59,8 +63,8 @@ msgstr "名稱"
 msgid "密碼"
 msgstr "密碼"
 
-#: src/routes/orders/$orderId.tsx:133
-#: src/routes/orders/index.tsx:147
+#: src/routes/orders/$orderId.tsx:140
+#: src/routes/orders/index.tsx:150
 msgid "已截單"
 msgstr "已截單"
 
@@ -72,7 +76,7 @@ msgstr "已有帳戶？登入"
 msgid "已經截單，不能再改。"
 msgstr "已經截單，不能再改。"
 
-#: src/routes/orders/index.tsx:89
+#: src/routes/orders/index.tsx:92
 msgid "店名"
 msgstr "店名"
 
@@ -80,15 +84,15 @@ msgstr "店名"
 msgid "建立帳戶"
 msgstr "建立帳戶"
 
-#: src/routes/orders/index.tsx:100
+#: src/routes/orders/index.tsx:103
 msgid "截單時間"
 msgstr "截單時間"
 
-#: src/routes/orders/index.tsx:63
+#: src/routes/orders/index.tsx:66
 msgid "截單時間要晚於現在。"
 msgstr "截單時間要晚於現在。"
 
-#: src/routes/orders/$orderId.tsx:112
+#: src/routes/orders/$orderId.tsx:119
 msgid "找不到這張單。"
 msgstr "找不到這張單。"
 
@@ -97,12 +101,12 @@ msgid "找不到這張單或這道菜。"
 msgstr "找不到這張單或這道菜。"
 
 #: src/components/header.tsx:26
-#: src/routes/orders/index.tsx:125
+#: src/routes/orders/index.tsx:128
 msgid "拼單"
 msgstr "拼單"
 
-#: src/routes/orders/$orderId.tsx:58
-#: src/routes/orders/index.tsx:50
+#: src/routes/orders/$orderId.tsx:59
+#: src/routes/orders/index.tsx:53
 msgid "操作失敗，請再試一次。"
 msgstr "操作失敗，請再試一次。"
 
@@ -123,12 +127,16 @@ msgstr "登入失敗"
 msgid "登出"
 msgstr "登出"
 
-#: src/routes/orders/$orderId.tsx:157
-#: src/routes/orders/$orderId.tsx:276
+#: src/routes/orders/$orderId.tsx:320
+msgid "編輯"
+msgstr "編輯"
+
+#: src/routes/orders/$orderId.tsx:164
+#: src/routes/orders/$orderId.tsx:348
 msgid "菜名"
 msgstr "菜名"
 
-#: src/routes/orders/$orderId.tsx:198
+#: src/routes/orders/$orderId.tsx:205
 msgid "菜單"
 msgstr "菜單"
 
@@ -148,8 +156,8 @@ msgstr "請填寫店名，截單時間要晚於現在。"
 msgid "請填寫菜名和大於零的價錢。"
 msgstr "請填寫菜名和大於零的價錢。"
 
-#: src/routes/orders/$orderId.tsx:115
-#: src/routes/orders/$orderId.tsx:139
+#: src/routes/orders/$orderId.tsx:122
+#: src/routes/orders/$orderId.tsx:146
 msgid "返回拼單"
 msgstr "返回拼單"
 
@@ -157,24 +165,24 @@ msgstr "返回拼單"
 msgid "還沒有帳戶？建立一個"
 msgstr "還沒有帳戶？建立一個"
 
-#: src/routes/orders/index.tsx:155
+#: src/routes/orders/index.tsx:158
 msgid "還沒有拼單。"
 msgstr "還沒有拼單。"
 
-#: src/routes/orders/$orderId.tsx:217
+#: src/routes/orders/$orderId.tsx:224
 msgid "還沒有菜。"
 msgstr "還沒有菜。"
 
-#: src/routes/orders/index.tsx:79
+#: src/routes/orders/index.tsx:82
 msgid "開一單"
 msgstr "開一單"
 
-#: src/routes/orders/index.tsx:111
+#: src/routes/orders/index.tsx:114
 msgid "開單"
 msgstr "開單"
 
-#: src/routes/orders/$orderId.tsx:133
-#: src/routes/orders/index.tsx:147
+#: src/routes/orders/$orderId.tsx:140
+#: src/routes/orders/index.tsx:150
 msgid "開放中"
 msgstr "開放中"
 
