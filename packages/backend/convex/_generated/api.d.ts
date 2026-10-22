@@ -13,6 +13,7 @@ import type * as functions from "../functions.js";
 import type * as http from "../http.js";
 import type * as init from "../init.js";
 import type * as lib_identity from "../lib/identity.js";
+import type * as lib_runEffect from "../lib/runEffect.js";
 import type * as migrations from "../migrations.js";
 import type * as orders from "../orders.js";
 import type * as viewer from "../viewer.js";
@@ -29,6 +30,7 @@ declare const fullApi: ApiFromModules<{
   http: typeof http;
   init: typeof init;
   "lib/identity": typeof lib_identity;
+  "lib/runEffect": typeof lib_runEffect;
   migrations: typeof migrations;
   orders: typeof orders;
   viewer: typeof viewer;

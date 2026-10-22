@@ -15,12 +15,13 @@ import {
 } from '@lunch-split/domain/orders';
 import { APP_ERROR_CODES, type AppErrorData } from '@lunch-split/shared/error-codes';
 import { ConvexError, v } from 'convex/values';
-import { Cause, Effect, Exit } from 'effect';
+import { type Effect } from 'effect';
 
 import { internal } from './_generated/api';
 import { query } from './_generated/server';
 import { internalMutation, mutation } from './functions';
 import { requireUserId } from './lib/identity';
+import { runEffect } from './lib/runEffect';
 import { orderStatusValidator } from './schema';
 
 const orderValidator = v.object({
@@ -63,14 +64,8 @@ function toConvexError(error: OrderError): ConvexError<AppErrorData> {
 	}
 }
 
-async function runOrder<A, E extends OrderError>(program: Effect.Effect<A, E>): Promise<A> {
-	const exit = await Effect.runPromiseExit(program);
-	if (Exit.isFailure(exit)) {
-		const failure = Cause.findErrorOption(exit.cause);
-		if (failure._tag === 'Some') throw toConvexError(failure.value);
-		throw Cause.squash(exit.cause);
-	}
-	return exit.value;
+function runOrder<A, E extends OrderError>(program: Effect.Effect<A, E>): Promise<A> {
+	return runEffect(program, toConvexError);
 }
 
 function notFound(message: string): ConvexError<AppErrorData> {
