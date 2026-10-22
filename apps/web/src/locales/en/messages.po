@@ -13,41 +13,45 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/routes/orders/$orderId.tsx:168
-#: src/routes/orders/$orderId.tsx:286
+#: src/routes/orders/$orderId.tsx:175
+#: src/routes/orders/$orderId.tsx:359
 msgid "價錢 (HKD)"
 msgstr "Price (HKD)"
 
-#: src/routes/orders/$orderId.tsx:71
-#: src/routes/orders/$orderId.tsx:87
+#: src/routes/orders/$orderId.tsx:72
+#: src/routes/orders/$orderId.tsx:92
 msgid "價錢格式不正確。"
 msgstr "The price format is invalid."
 
-#: src/routes/orders/$orderId.tsx:296
+#: src/routes/orders/$orderId.tsx:369
 msgid "儲存"
 msgstr "Save"
 
-#: src/routes/orders/$orderId.tsx:302
+#: src/routes/orders/$orderId.tsx:287
 msgid "刪除"
 msgstr "Delete"
 
-#: src/routes/orders/$orderId.tsx:179
+#: src/routes/orders/$orderId.tsx:186
 msgid "加入"
 msgstr "Add"
 
-#: src/routes/orders/$orderId.tsx:147
+#: src/routes/orders/$orderId.tsx:154
 msgid "加菜"
 msgstr "Add a dish"
+
+#: src/routes/orders/$orderId.tsx:372
+msgid "取消"
+msgstr "Cancel"
 
 #: src/features/orders/order-errors.ts:13
 msgid "只能改自己點的菜。"
 msgstr "You can only change your own dish."
 
-#: src/routes/orders/$orderId.tsx:183
+#: src/routes/orders/$orderId.tsx:190
 msgid "只能改自己點的菜。截單後誰都不能改。"
 msgstr "You can only change your own dish. After the cutoff, nobody can change anything."
 
-#: src/routes/orders/$orderId.tsx:221
+#: src/routes/orders/$orderId.tsx:228
 msgid "合計"
 msgstr "Total"
 
@@ -59,8 +63,8 @@ msgstr "Name"
 msgid "密碼"
 msgstr "Password"
 
-#: src/routes/orders/$orderId.tsx:133
-#: src/routes/orders/index.tsx:147
+#: src/routes/orders/$orderId.tsx:140
+#: src/routes/orders/index.tsx:150
 msgid "已截單"
 msgstr "Closed"
 
@@ -72,7 +76,7 @@ msgstr "Already have an account? Sign in"
 msgid "已經截單，不能再改。"
 msgstr "This order is closed."
 
-#: src/routes/orders/index.tsx:89
+#: src/routes/orders/index.tsx:92
 msgid "店名"
 msgstr "Restaurant"
 
@@ -80,15 +84,15 @@ msgstr "Restaurant"
 msgid "建立帳戶"
 msgstr "Create account"
 
-#: src/routes/orders/index.tsx:100
+#: src/routes/orders/index.tsx:103
 msgid "截單時間"
 msgstr "Cutoff"
 
-#: src/routes/orders/index.tsx:63
+#: src/routes/orders/index.tsx:66
 msgid "截單時間要晚於現在。"
 msgstr "The cutoff must be in the future."
 
-#: src/routes/orders/$orderId.tsx:112
+#: src/routes/orders/$orderId.tsx:119
 msgid "找不到這張單。"
 msgstr "This order could not be found."
 
@@ -97,12 +101,12 @@ msgid "找不到這張單或這道菜。"
 msgstr "That order or dish could not be found."
 
 #: src/components/header.tsx:26
-#: src/routes/orders/index.tsx:125
+#: src/routes/orders/index.tsx:128
 msgid "拼單"
 msgstr "Orders"
 
-#: src/routes/orders/$orderId.tsx:58
-#: src/routes/orders/index.tsx:50
+#: src/routes/orders/$orderId.tsx:59
+#: src/routes/orders/index.tsx:53
 msgid "操作失敗，請再試一次。"
 msgstr "Something went wrong. Please try again."
 
@@ -123,12 +127,16 @@ msgstr "Sign-in failed"
 msgid "登出"
 msgstr "Sign out"
 
-#: src/routes/orders/$orderId.tsx:157
-#: src/routes/orders/$orderId.tsx:276
+#: src/routes/orders/$orderId.tsx:320
+msgid "編輯"
+msgstr "Edit"
+
+#: src/routes/orders/$orderId.tsx:164
+#: src/routes/orders/$orderId.tsx:348
 msgid "菜名"
 msgstr "Dish"
 
-#: src/routes/orders/$orderId.tsx:198
+#: src/routes/orders/$orderId.tsx:205
 msgid "菜單"
 msgstr "Dishes"
 
@@ -148,8 +156,8 @@ msgstr "Enter a restaurant and a cutoff in the future."
 msgid "請填寫菜名和大於零的價錢。"
 msgstr "Enter a dish name and a price above zero."
 
-#: src/routes/orders/$orderId.tsx:115
-#: src/routes/orders/$orderId.tsx:139
+#: src/routes/orders/$orderId.tsx:122
+#: src/routes/orders/$orderId.tsx:146
 msgid "返回拼單"
 msgstr "Back to orders"
 
@@ -157,24 +165,24 @@ msgstr "Back to orders"
 msgid "還沒有帳戶？建立一個"
 msgstr "No account yet? Create one"
 
-#: src/routes/orders/index.tsx:155
+#: src/routes/orders/index.tsx:158
 msgid "還沒有拼單。"
 msgstr "No orders yet."
 
-#: src/routes/orders/$orderId.tsx:217
+#: src/routes/orders/$orderId.tsx:224
 msgid "還沒有菜。"
 msgstr "No dishes yet."
 
-#: src/routes/orders/index.tsx:79
+#: src/routes/orders/index.tsx:82
 msgid "開一單"
 msgstr "Open an order"
 
-#: src/routes/orders/index.tsx:111
+#: src/routes/orders/index.tsx:114
 msgid "開單"
 msgstr "Open"
 
-#: src/routes/orders/$orderId.tsx:133
-#: src/routes/orders/index.tsx:147
+#: src/routes/orders/$orderId.tsx:140
+#: src/routes/orders/index.tsx:150
 msgid "開放中"
 msgstr "Open"
 

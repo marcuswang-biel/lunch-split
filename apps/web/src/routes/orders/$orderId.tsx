@@ -16,8 +16,8 @@ import {
 } from '@lunch-split/web-ui';
 import { useQuery } from '@tanstack/react-query';
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { Trash2 } from 'lucide-react';
-import { useEffect, useState, type FormEvent } from 'react';
+import { Pencil, Trash2 } from 'lucide-react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 
 import Loader from '@/components/loader';
 import { RequireAuth } from '@/components/require-auth';
@@ -81,17 +81,23 @@ function OrderPage() {
 		}
 	};
 
-	const handleRevise = async (dishId: Id<'dishes'>, nextName: string, nextPrice: string) => {
+	const handleRevise = async (
+		dishId: Id<'dishes'>,
+		nextName: string,
+		nextPrice: string,
+	): Promise<boolean> => {
 		setError(null);
 		const priceCents = parseAmountToCents(nextPrice);
 		if (priceCents === null || priceCents <= 0) {
 			setError(t`價錢格式不正確。`);
-			return;
+			return false;
 		}
 		try {
 			await reviseDish({ dishId, name: nextName, priceCents });
+			return true;
 		} catch (failure) {
 			setError(describeError(failure));
+			return false;
 		}
 	};
 
@@ -243,12 +249,47 @@ function DishRow({
 	};
 	mine: boolean;
 	locked: boolean;
-	onRevise: (dishId: Id<'dishes'>, name: string, price: string) => Promise<void>;
+	onRevise: (dishId: Id<'dishes'>, name: string, price: string) => Promise<boolean>;
 	onRemove: (dishId: Id<'dishes'>) => Promise<void>;
 }) {
 	const { t } = useLingui();
+	const [editing, setEditing] = useState(false);
 	const [name, setName] = useState(dish.name);
 	const [price, setPrice] = useState(() => centsToInput(dish.priceCents));
+	const nameRef = useRef<HTMLInputElement>(null);
+	const editRef = useRef<HTMLButtonElement>(null);
+	const pendingFocus = useRef<'name' | 'edit' | null>(null);
+	const formId = `dish-edit-${dish._id}`;
+
+	useEffect(() => {
+		if (pendingFocus.current === 'name') nameRef.current?.focus();
+		if (pendingFocus.current === 'edit') editRef.current?.focus();
+		pendingFocus.current = null;
+	}, [editing]);
+
+	const beginEdit = () => {
+		setName(dish.name);
+		setPrice(centsToInput(dish.priceCents));
+		pendingFocus.current = 'name';
+		setEditing(true);
+	};
+
+	const endEdit = () => {
+		pendingFocus.current = 'edit';
+		setEditing(false);
+	};
+
+	const removeButton = (
+		<Button
+			type="button"
+			variant="ghost"
+			size="icon"
+			aria-label={t`刪除`}
+			onClick={() => void onRemove(dish._id)}
+		>
+			<Trash2 aria-hidden="true" />
+		</Button>
+	);
 
 	if (!mine || locked) {
 		return (
@@ -262,21 +303,52 @@ function DishRow({
 		);
 	}
 
+	if (!editing) {
+		return (
+			<li className="flex items-center justify-between gap-4 py-3">
+				<div className="min-w-0">
+					<p className="truncate font-medium">{dish.name}</p>
+					<p className="text-muted-foreground text-sm">{dish.ownerLabel}</p>
+				</div>
+				<div className="flex shrink-0 items-center gap-1">
+					<p className="px-2 text-sm">{formatCents(dish.priceCents)}</p>
+					<Button
+						ref={editRef}
+						type="button"
+						variant="ghost"
+						size="icon"
+						aria-label={t`編輯`}
+						aria-expanded={false}
+						aria-controls={formId}
+						onClick={beginEdit}
+					>
+						<Pencil aria-hidden="true" />
+					</Button>
+					{removeButton}
+				</div>
+			</li>
+		);
+	}
+
 	return (
 		<li className="grid gap-3 py-3">
 			<p className="text-muted-foreground text-sm">{dish.ownerLabel}</p>
 			<form
+				id={formId}
 				onSubmit={(event) => {
 					event.preventDefault();
-					void onRevise(dish._id, name, price);
+					void onRevise(dish._id, name, price).then((saved) => {
+						if (saved) endEdit();
+					});
 				}}
-				className="grid gap-3 sm:grid-cols-[1fr_8rem_auto_auto] sm:items-end"
+				className="grid gap-3 sm:grid-cols-[1fr_8rem_auto_auto_auto] sm:items-end"
 			>
 				<div className="space-y-2">
 					<Label htmlFor={`dish-name-${dish._id}`}>
 						<Trans>菜名</Trans>
 					</Label>
 					<Input
+						ref={nameRef}
 						id={`dish-name-${dish._id}`}
 						value={name}
 						onChange={(event) => setName(event.target.value)}
@@ -296,15 +368,10 @@ function DishRow({
 				<Button type="submit">
 					<Trans>儲存</Trans>
 				</Button>
-				<Button
-					type="button"
-					variant="ghost"
-					size="icon"
-					aria-label={t`刪除`}
-					onClick={() => void onRemove(dish._id)}
-				>
-					<Trash2 />
+				<Button type="button" variant="ghost" onClick={endEdit}>
+					<Trans>取消</Trans>
 				</Button>
+				{removeButton}
 			</form>
 		</li>
 	);
