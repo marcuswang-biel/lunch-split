@@ -9,6 +9,10 @@ export const APP_ERROR_CODES = {
 	notFound: 'NOT_FOUND',
 	claimInvalid: 'CLAIM_INVALID',
 	claimMonthlyQuotaExceeded: 'CLAIM_MONTHLY_QUOTA_EXCEEDED',
+	orderInvalid: 'ORDER_INVALID',
+	dishInvalid: 'DISH_INVALID',
+	orderClosed: 'ORDER_CLOSED',
+	notDishOwner: 'NOT_DISH_OWNER',
 } as const;
 
 export type AppErrorCode = (typeof APP_ERROR_CODES)[keyof typeof APP_ERROR_CODES];
