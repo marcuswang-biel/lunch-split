@@ -4,11 +4,9 @@ import { ActivityIndicator, FlatList, Pressable, StyleSheet, Text, View } from '
 
 import { useSignOut } from '@/auth';
 
-const currency = new Intl.NumberFormat('en-HK', { style: 'currency', currency: 'HKD' });
-
-/** The signed-in user's claims, live from Convex (same query the web app uses). */
-export function ClaimsList() {
-	const claims = useQuery(api.claims.listMine);
+/** Office lunch orders, live from Convex (same query the web app uses). */
+export function OrdersList() {
+	const orders = useQuery(api.orders.list);
 	const viewer = useQuery(api.viewer.get);
 	const signOut = useSignOut();
 
@@ -20,18 +18,19 @@ export function ClaimsList() {
 					<Text style={styles.link}>Sign out</Text>
 				</Pressable>
 			</View>
-			{claims === undefined ? (
+			{orders === undefined ? (
 				<ActivityIndicator />
 			) : (
 				<FlatList
-					data={claims}
-					keyExtractor={(claim) => claim._id}
-					ListEmptyComponent={<Text style={styles.muted}>No claims yet.</Text>}
+					data={orders}
+					keyExtractor={(order) => order._id}
+					ListEmptyComponent={<Text style={styles.muted}>No orders yet.</Text>}
 					renderItem={({ item }) => (
 						<View style={styles.row}>
-							<Text style={styles.title}>{item.title}</Text>
+							<Text style={styles.title}>{item.restaurant}</Text>
 							<Text style={styles.muted}>
-								{currency.format(item.amountCents / 100)} · {item.status}
+								{new Date(item.closesAt).toLocaleString()} ·{' '}
+								{item.status === 'closed' ? 'Closed' : 'Open'}
 							</Text>
 						</View>
 					)}

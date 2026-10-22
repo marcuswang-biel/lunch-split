@@ -2,7 +2,7 @@ import { useConvexAuth } from 'convex/react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
 import { SignInScreen } from '@/auth';
-import { ClaimsList } from '@/components/claims-list';
+import { OrdersList } from '@/components/orders-list';
 
 export default function HomeScreen() {
 	const { isAuthenticated, isLoading } = useConvexAuth();
@@ -14,7 +14,7 @@ export default function HomeScreen() {
 			</View>
 		);
 	}
-	return isAuthenticated ? <ClaimsList /> : <SignInScreen />;
+	return isAuthenticated ? <OrdersList /> : <SignInScreen />;
 }
 
 const styles = StyleSheet.create({
