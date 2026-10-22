@@ -38,6 +38,7 @@ const dishValidator = v.object({
 	_creationTime: v.number(),
 	orderId: v.id('orders'),
 	ownerId: v.string(),
+	ownerLabel: v.string(),
 	name: v.string(),
 	priceCents: v.number(),
 	createdAt: v.number(),
@@ -135,6 +136,7 @@ export const addDish = mutation({
 	returns: v.id('dishes'),
 	handler: async (ctx, args) => {
 		const ownerId = await requireUserId(ctx);
+		const identity = await ctx.auth.getUserIdentity();
 		const order = await ctx.db.get('orders', args.orderId);
 		if (!order) throw notFound('Order not found.');
 		const now = Date.now();
@@ -144,6 +146,7 @@ export const addDish = mutation({
 		return await ctx.db.insert('dishes', {
 			orderId: args.orderId,
 			ownerId,
+			ownerLabel: identity?.email ?? identity?.name ?? ownerId,
 			name: draft.name,
 			priceCents: draft.priceCents,
 			createdAt: now,

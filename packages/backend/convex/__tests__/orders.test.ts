@@ -52,6 +52,7 @@ describe('orders', () => {
 			name: '乾炒牛河',
 			priceCents: 6_800,
 			ownerId: alice.userId,
+			ownerLabel: 'alice@example.com',
 		});
 		const listed = await bob.as.query(api.orders.list, {});
 		expect(listed.map((order) => order.restaurant)).toEqual(['茶餐廳']);

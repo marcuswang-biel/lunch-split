@@ -37,12 +37,13 @@ export default defineSchema({
 
 	/**
 	 * One dish on an order. `ownerId` is the auth subject of the person who
-	 * ordered it. Only that person may change the row, and only while the order
-	 * is open.
+	 * ordered it, and `ownerLabel` is the email or name shown to the office.
+	 * Only that person may change the row, and only while the order is open.
 	 */
 	dishes: defineTable({
 		orderId: v.id('orders'),
 		ownerId: v.string(),
+		ownerLabel: v.string(),
 		name: v.string(),
 		priceCents: v.number(),
 		createdAt: v.number(),
