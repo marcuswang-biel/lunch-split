@@ -19,13 +19,13 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
-		"@lunch-split/backend": "workspace:*",
-		"@lunch-split/shared": "workspace:*",
-		"@lunch-split/web-ui": "workspace:*",
 		"@convex-dev/better-auth": "catalog:",
 		"@convex-dev/react-query": "catalog:",
 		"@lingui/core": "catalog:",
 		"@lingui/react": "catalog:",
+		"@lunch-split/backend": "workspace:*",
+		"@lunch-split/shared": "workspace:*",
+		"@lunch-split/web-ui": "workspace:*",
 		"@t3-oss/env-core": "catalog:",
 		"@tailwindcss/vite": "catalog:",
 		"@tanstack/react-query": "catalog:",
@@ -39,11 +39,11 @@
 		"zod": "catalog:"
 	},
 	"devDependencies": {
-		"@lunch-split/config": "workspace:*",
 		"@lingui/babel-plugin-lingui-macro": "catalog:",
 		"@lingui/cli": "catalog:",
 		"@lingui/conf": "catalog:",
 		"@lingui/vite-plugin": "catalog:",
+		"@lunch-split/config": "workspace:*",
 		"@tanstack/router-plugin": "catalog:",
 		"@types/node": "catalog:",
 		"@types/react": "catalog:",

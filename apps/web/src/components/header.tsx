@@ -1,7 +1,7 @@
-import { api } from '@lunch-split/backend/convex/_generated/api';
-import { Button } from '@lunch-split/web-ui';
 import { convexQuery } from '@convex-dev/react-query';
 import { Trans } from '@lingui/react/macro';
+import { api } from '@lunch-split/backend/convex/_generated/api';
+import { Button } from '@lunch-split/web-ui';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from '@tanstack/react-router';
 import { useConvexAuth } from 'convex/react';

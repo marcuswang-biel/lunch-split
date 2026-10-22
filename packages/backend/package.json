@@ -22,21 +22,21 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
-		"@lunch-split/domain": "workspace:*",
-		"@lunch-split/shared": "workspace:*",
 		"@better-auth/core": "catalog:",
 		"@better-auth/expo": "catalog:",
 		"@convex-dev/better-auth": "catalog:",
 		"@convex-dev/migrations": "catalog:",
+		"@lunch-split/domain": "workspace:*",
+		"@lunch-split/shared": "workspace:*",
 		"better-auth": "catalog:",
 		"convex": "catalog:",
 		"convex-helpers": "catalog:",
 		"effect": "catalog:"
 	},
 	"devDependencies": {
-		"@lunch-split/config": "workspace:*",
 		"@convex-dev/eslint-plugin": "^3.0.0",
 		"@edge-runtime/vm": "catalog:",
+		"@lunch-split/config": "workspace:*",
 		"@types/node": "catalog:",
 		"convex-test": "catalog:",
 		"eslint": "8.57.1",

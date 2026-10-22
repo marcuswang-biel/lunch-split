@@ -1,5 +1,5 @@
-import { Button, Input, Label } from '@lunch-split/web-ui';
 import { Trans, useLingui } from '@lingui/react/macro';
+import { Button, Input, Label } from '@lunch-split/web-ui';
 import { useState, type FormEvent } from 'react';
 
 import { authClient } from './auth-client';

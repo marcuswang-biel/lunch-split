@@ -1,11 +1,19 @@
 import type { Id } from '@lunch-split/backend/convex/_generated/dataModel';
 
+import { convexQuery, useConvexMutation } from '@convex-dev/react-query';
+import { Trans, useLingui } from '@lingui/react/macro';
 import { api } from '@lunch-split/backend/convex/_generated/api';
 import { convexErrorCode } from '@lunch-split/shared/convex-error';
 import { isAppErrorCode } from '@lunch-split/shared/error-codes';
-import { Button, Card, CardContent, CardHeader, CardTitle, Input, Label } from '@lunch-split/web-ui';
-import { convexQuery, useConvexMutation } from '@convex-dev/react-query';
-import { Trans, useLingui } from '@lingui/react/macro';
+import {
+	Button,
+	Card,
+	CardContent,
+	CardHeader,
+	CardTitle,
+	Input,
+	Label,
+} from '@lunch-split/web-ui';
 import { useQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
 import { Trash2 } from 'lucide-react';

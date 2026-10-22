@@ -1,5 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@lunch-split/web-ui';
 import { Trans } from '@lingui/react/macro';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@lunch-split/web-ui';
 import { createFileRoute, Navigate } from '@tanstack/react-router';
 import { useConvexAuth } from 'convex/react';
 
