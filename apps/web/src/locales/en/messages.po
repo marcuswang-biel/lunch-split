@@ -6,66 +6,105 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
-#: src/routes/claims.tsx:104
-msgid "HK$500 或以下自動批准；每月上限 HK$5,000。"
-msgstr "Claims of HK$500 or less are approved automatically. Monthly limit: HK$5,000."
+#: src/routes/orders/$orderId.tsx:168
+#: src/routes/orders/$orderId.tsx:286
+msgid "價錢 (HKD)"
+msgstr "Price (HKD)"
 
-#: src/routes/claims.tsx:132
+#: src/routes/orders/$orderId.tsx:71
+#: src/routes/orders/$orderId.tsx:87
+msgid "價錢格式不正確。"
+msgstr "The price format is invalid."
+
+#: src/routes/orders/$orderId.tsx:296
+msgid "儲存"
+msgstr "Save"
+
+#: src/routes/orders/$orderId.tsx:302
 msgid "刪除"
 msgstr "Delete"
+
+#: src/routes/orders/$orderId.tsx:179
+msgid "加入"
+msgstr "Add"
+
+#: src/routes/orders/$orderId.tsx:147
+msgid "加菜"
+msgstr "Add a dish"
+
+#: src/features/orders/order-errors.ts:13
+msgid "只能改自己點的菜。"
+msgstr "You can only change your own dish."
+
+#: src/routes/orders/$orderId.tsx:183
+msgid "只能改自己點的菜。截單後誰都不能改。"
+msgstr "You can only change your own dish. After the cutoff, nobody can change anything."
+
+#: src/routes/orders/$orderId.tsx:221
+msgid "合計"
+msgstr "Total"
 
 #: src/auth/sign-in-panel.tsx:38
 msgid "名稱"
 msgstr "Name"
 
-#: src/components/header.tsx:26
-msgid "報銷"
-msgstr "Claims"
-
 #: src/auth/sign-in-panel.tsx:64
 msgid "密碼"
 msgstr "Password"
 
-#: src/routes/claims.tsx:126
-msgid "已批准"
-msgstr "Approved"
+#: src/routes/orders/$orderId.tsx:133
+#: src/routes/orders/index.tsx:147
+msgid "已截單"
+msgstr "Closed"
 
 #: src/auth/sign-in-panel.tsx:90
 msgid "已有帳戶？登入"
 msgstr "Already have an account? Sign in"
 
+#: src/features/orders/order-errors.ts:12
+msgid "已經截單，不能再改。"
+msgstr "This order is closed."
+
+#: src/routes/orders/index.tsx:89
+msgid "店名"
+msgstr "Restaurant"
+
 #: src/auth/sign-in-panel.tsx:82
 msgid "建立帳戶"
 msgstr "Create account"
 
-#: src/routes/claims.tsx:126
-msgid "待審批"
-msgstr "Pending review"
+#: src/routes/orders/index.tsx:100
+msgid "截單時間"
+msgstr "Cutoff"
 
-#: src/routes/claims.tsx:112
-msgid "我的報銷"
-msgstr "My claims"
+#: src/routes/orders/index.tsx:63
+msgid "截單時間要晚於現在。"
+msgstr "The cutoff must be in the future."
 
-#: src/features/claims/claim-errors.ts:9
-msgid "找不到這筆報銷。"
-msgstr "This claim was not found."
+#: src/routes/orders/$orderId.tsx:112
+msgid "找不到這張單。"
+msgstr "This order could not be found."
 
-#: src/routes/claims.tsx:95
-msgid "提交"
-msgstr "Submit"
+#: src/features/orders/order-errors.ts:9
+msgid "找不到這張單或這道菜。"
+msgstr "That order or dish could not be found."
 
-#: src/routes/claims.tsx:39
+#: src/components/header.tsx:26
+#: src/routes/orders/index.tsx:125
+msgid "拼單"
+msgstr "Orders"
+
+#: src/routes/orders/$orderId.tsx:58
+#: src/routes/orders/index.tsx:50
 msgid "操作失敗，請再試一次。"
 msgstr "Something went wrong. Please try again."
-
-#: src/routes/claims.tsx:72
-msgid "新增報銷"
-msgstr "New claim"
-
-#: src/routes/claims.tsx:79
-msgid "標題"
-msgstr "Title"
 
 #: src/auth/sign-in-panel.tsx:82
 #: src/routes/sign-in.tsx:23
@@ -73,8 +112,8 @@ msgid "登入"
 msgstr "Sign in"
 
 #: src/routes/sign-in.tsx:26
-msgid "登入以使用內部系統"
-msgstr "Sign in to use the internal system"
+msgid "登入以加入拼單"
+msgstr "Sign in to join an order"
 
 #: src/auth/sign-in-panel.tsx:29
 msgid "登入失敗"
@@ -84,37 +123,60 @@ msgstr "Sign-in failed"
 msgid "登出"
 msgstr "Sign out"
 
+#: src/routes/orders/$orderId.tsx:157
+#: src/routes/orders/$orderId.tsx:276
+msgid "菜名"
+msgstr "Dish"
+
+#: src/routes/orders/$orderId.tsx:198
+msgid "菜單"
+msgstr "Dishes"
+
 #: src/components/locale-switcher.tsx:11
 msgid "語言"
 msgstr "Language"
 
-#: src/features/claims/claim-errors.ts:8
+#: src/features/orders/order-errors.ts:8
 msgid "請先登入。"
 msgstr "Please sign in first."
 
-#: src/features/claims/claim-errors.ts:10
-msgid "請填寫標題和大於零的金額。"
-msgstr "Enter a title and an amount greater than zero."
+#: src/features/orders/order-errors.ts:10
+msgid "請填寫店名，截單時間要晚於現在。"
+msgstr "Enter a restaurant and a cutoff in the future."
 
-#: src/features/claims/claim-errors.ts:11
-msgid "這筆報銷會超出本月額度。"
-msgstr "This claim would exceed your monthly limit."
+#: src/features/orders/order-errors.ts:11
+msgid "請填寫菜名和大於零的價錢。"
+msgstr "Enter a dish name and a price above zero."
 
-#: src/routes/claims.tsx:142
-msgid "還沒有報銷。"
-msgstr "No claims yet."
+#: src/routes/orders/$orderId.tsx:115
+#: src/routes/orders/$orderId.tsx:139
+msgid "返回拼單"
+msgstr "Back to orders"
 
 #: src/auth/sign-in-panel.tsx:90
 msgid "還沒有帳戶？建立一個"
 msgstr "No account yet? Create one"
 
-#: src/routes/claims.tsx:85
-msgid "金額 (HKD)"
-msgstr "Amount (HKD)"
+#: src/routes/orders/index.tsx:155
+msgid "還沒有拼單。"
+msgstr "No orders yet."
 
-#: src/routes/claims.tsx:47
-msgid "金額格式不正確。"
-msgstr "Enter the amount as a number with up to two decimals."
+#: src/routes/orders/$orderId.tsx:217
+msgid "還沒有菜。"
+msgstr "No dishes yet."
+
+#: src/routes/orders/index.tsx:79
+msgid "開一單"
+msgstr "Open an order"
+
+#: src/routes/orders/index.tsx:111
+msgid "開單"
+msgstr "Open"
+
+#: src/routes/orders/$orderId.tsx:133
+#: src/routes/orders/index.tsx:147
+msgid "開放中"
+msgstr "Open"
 
 #: src/auth/sign-in-panel.tsx:50
 msgid "電郵"

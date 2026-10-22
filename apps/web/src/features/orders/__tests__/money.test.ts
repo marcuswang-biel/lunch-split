@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { parseAmountToCents } from '../amount';
+import { centsToInput, parseAmountToCents } from '../money';
 
 describe('parseAmountToCents', () => {
 	it('parses whole and decimal amounts without float error', () => {
@@ -14,5 +14,12 @@ describe('parseAmountToCents', () => {
 		expect(parseAmountToCents('-3')).toBeNull();
 		expect(parseAmountToCents('abc')).toBeNull();
 		expect(parseAmountToCents('')).toBeNull();
+	});
+});
+
+describe('centsToInput', () => {
+	it('drops a zero fraction and keeps a non-zero one', () => {
+		expect(centsToInput(1_200)).toBe('12');
+		expect(centsToInput(1_250)).toBe('12.50');
 	});
 });

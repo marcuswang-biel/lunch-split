@@ -13,7 +13,7 @@ export const Route = createFileRoute('/sign-in')({
 function SignInPage() {
 	const { isAuthenticated, isLoading } = useConvexAuth();
 	if (isLoading) return <Loader />;
-	if (isAuthenticated) return <Navigate to="/claims" replace />;
+	if (isAuthenticated) return <Navigate to="/orders" replace />;
 
 	return (
 		<div className="flex min-h-full items-center justify-center p-4">
@@ -23,7 +23,7 @@ function SignInPage() {
 						<Trans>登入</Trans>
 					</CardTitle>
 					<CardDescription>
-						<Trans>登入以使用內部系統</Trans>
+						<Trans>登入以加入拼單</Trans>
 					</CardDescription>
 				</CardHeader>
 				<CardContent>

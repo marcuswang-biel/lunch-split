@@ -22,8 +22,8 @@ export default function Header() {
 					午飯拼單
 				</Link>
 				{isAuthenticated && (
-					<Link to="/claims" className="[&.active]:text-foreground text-muted-foreground">
-						<Trans>報銷</Trans>
+					<Link to="/orders" className="[&.active]:text-foreground text-muted-foreground">
+						<Trans>拼單</Trans>
 					</Link>
 				)}
 			</nav>

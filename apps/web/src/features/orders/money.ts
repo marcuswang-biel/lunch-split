@@ -10,6 +10,13 @@ export function parseAmountToCents(input: string): number | null {
 	return Number(whole) * 100 + Number(fraction.padEnd(2, '0'));
 }
 
+/** The inverse of {@link parseAmountToCents}, for filling an input. */
+export function centsToInput(cents: number): string {
+	const whole = Math.trunc(cents / 100);
+	const fraction = Math.abs(cents % 100);
+	return fraction === 0 ? String(whole) : `${whole}.${String(fraction).padStart(2, '0')}`;
+}
+
 const currency = new Intl.NumberFormat('en-HK', { style: 'currency', currency: 'HKD' });
 
 export function formatCents(cents: number): string {
